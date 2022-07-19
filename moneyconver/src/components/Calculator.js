@@ -31,7 +31,7 @@ class CurrencyInput extends React.Component{
   render() {
     return (
       <fieldset>
-        <legend>Enter { this.props.currencyName }</legend>
+        <legend>Tiền { this.props.currencyName }</legend>
         <input value={this.props.money} onChange={this.handleChange}></input>
       </fieldset>
     );
@@ -83,12 +83,12 @@ class Calculator extends React.Component {
     return (
       <div className="Calculator">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          {/* <img src={logo} className="App-logo" alt="logo" />
 
-          <h2>It is { date.toLocaleTimeString() } { date.toDateString() }</h2>
+          <h2>It is { date.toLocaleTimeString() } { date.toDateString() }</h2> */}
 
           <div>
-            <select className="select-box" onChange={this.handleChangeCurrency}>
+            <select style={{height: 35, borderRadius:5}} className="select-box" onChange={this.handleChangeCurrency}>
               <option value="USD">Đô la Mỹ - USD</option>
               <option value="AUD">Đô la Úc - AUD</option>
               <option value="CAD">Đô la Canada - CAD</option>
@@ -119,9 +119,9 @@ class Calculator extends React.Component {
             </select>
           </div>
 
-          <div className="form-input">
-            <CurrencyInput currencyName={this.state.currencyCode} money={notVND} onMoneyChange={this.handleChangeVNDEncode}/>
-            <CurrencyInput currencyName="VND" money={VND} onMoneyChange={this.handleChangeVNDDecode}/>
+          <div  className="form-input">
+            <CurrencyInput  currencyName={this.state.currencyCode} money={notVND} onMoneyChange={this.handleChangeVNDEncode}/>
+            <CurrencyInput  currencyName="VND" money={VND} onMoneyChange={this.handleChangeVNDDecode}/>
           </div>
         </header>
       </div>
